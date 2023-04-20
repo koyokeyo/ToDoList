@@ -58,7 +58,6 @@ public class TaskController {
             Task existingTask = taskOptional.get();
             existingTask.setName(task.getName());
             existingTask.setComplete(task.isComplete());
-            existingTask.setTaskAssignmentList(task.getTaskAssignmentList());
             existingTask.setDescription(task.getDescription());
             taskRepository.save(existingTask);
             return existingTask;

@@ -16,15 +16,15 @@ public class Task {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "decription", nullable = true)
+    @Column(name = "decription",length=1000, nullable = true)
     private String description;
 
     @Column(name="is_completed")
     private boolean isComplete;
 
 
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TaskAssignment> taskAssignmentList = new ArrayList<>();
+    //@OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private List<TaskAssignment> taskAssignmentList = new ArrayList<>();
     public boolean isComplete() {
         return isComplete;
     }
@@ -71,11 +71,11 @@ public class Task {
         return Objects.hash(id);
     }
 
-    public List<TaskAssignment> getTaskAssignmentList() {
-        return taskAssignmentList;
-    }
+    //public List<TaskAssignment> getTaskAssignmentList() {
+    //    return taskAssignmentList;
+    //}
 
-    public void setTaskAssignmentList(List<TaskAssignment> taskAssignmentList) {
-        this.taskAssignmentList = taskAssignmentList;
-    }
+   //public void setTaskAssignmentList(List<TaskAssignment> taskAssignmentList) {
+   //    this.taskAssignmentList = taskAssignmentList;
+   //}
 }
